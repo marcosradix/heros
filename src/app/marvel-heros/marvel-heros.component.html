@@ -1,0 +1,27 @@
+
+<div class="row">
+  <div class="col-4 offset-4">
+      <ul class="list-group" >
+          <li class="list-group-item" *ngFor="let hero of heros; index as i" [ngClass]="{'text-success': hero === 'Hulk'}" >{{hero}}
+              <button type="button" class="btn btn-warning" (click)="removerHeroName(i)" >
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+          </li> 
+            <li class="list-group-item" >
+                <button class="btn btn-info" (click)="iniciar()" >Iniciar</button>
+            </li>
+
+          <li class="list-group-item" *ngIf="iniciado" >
+              <input type="text" [(ngModel)]="entradaTexto" class="form-control" >
+            <br>
+              <button [disabled]="!entradaTexto" class="btn btn-success" (click)="changeHeroName()" >Adicionar Herói</button>
+          </li>
+        
+        </ul>
+  </div>
+
+</div>
+
+
+
+
